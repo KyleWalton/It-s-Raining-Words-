@@ -8,11 +8,12 @@ public class WordInput : MonoBehaviour
 
     void Update()
     {
-        //InputString - Shows all the characters that the player has typed.
-        foreach (char letter in Input.inputString)
+        if (!Data.Instance.gameIsPaused)
         {
-            wordManager.TypeLetter(letter);
-            //Debug.Log(letter);
+            foreach (char letter in Input.inputString)
+            {
+                wordManager.TypeLetter(letter);
+            }
         }
     }
 }
